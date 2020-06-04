@@ -21,10 +21,18 @@ var maxSubArray = function(nums) {
 };
 
 let arr = [-2, 1, -3, 4, -1, 2, 1, -5, 4];
-
-let result = maxSubArray(arr); /*?.*/
+let result = maxSubArray(arr);
 
 console.log(result, result === 6);
-//n = 1000
-// O(n + n*(n+1)/2) = O(501 500)
-// O(n * n) = O(1 000 000)
+
+var func = () => { for (let i = 0; i < 100000; i++) { maxSubArray(arr); } }
+func();/*?.*/
+
+let n = 1000000
+
+// O(n + n*(n+1)/2)
+console.log(n + n * (n + 1) / 2);
+// O(n * n)
+console.log(n * n);
+// O(n * log(n))
+console.log(n * Math.log10(n));
